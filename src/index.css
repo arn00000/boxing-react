@@ -1,13 +1,230 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Urbanist", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#text {
+  font-family: "Train One", cursive;
+  color: #a38a00;
+}
+
+#navbar-shape {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 0,
+    100% 34%,
+    83% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+}
+
+.accordion-body {
+  border: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #14213d;
+  color: #a38a00;
+  border-bottom: none;
+}
+
+.accordion-button {
+  font-family: "Rubik Mono One", sans-serif;
+  border-bottom: 1px solid #a38a00;
+}
+
+.accordion-button:has(.collapsed) {
+  color: #14213d;
+}
+
+#historic-btn {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 0,
+    100% 0%,
+    83% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+  transition: 0.5s ease-in-out;
+}
+
+#button {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 0,
+    100% 34%,
+    83% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+  transition: 0.5s ease-in-out;
+}
+
+#historic-btn:hover {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 0,
+    100% 100%,
+    80% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+}
+
+#button:hover {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 0,
+    100% 100%,
+    80% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+}
+
+#banner-text h1 {
+  font-family: "Train One", cursive;
+}
+
+#scroll-banner {
+  overflow: hidden;
+}
+
+#banner-text {
+  /* animation properties */
+  /* transform: translateY(-100%); */
+  /* animation: my-animation 10s linear infinite; */
+  animation-name: my-animation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1.75s;
+  animation-fill-mode: both;
+  animation-delay: 0s;
+  animation-direction: normal;
+}
+
+@keyframes my-animation {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(18%);
+  }
+}
+
+.historic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.historic h1 {
+  background-color: white;
+  border-bottom: 3px solid #a38a00;
+  padding: 10px;
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+}
+
+.historic:hover h1 {
+  bottom: 0;
+  width: 100%;
+  transition: 0.35s ease;
+}
+
+.historic img {
+  filter: brightness(0.5);
+  transition: 0.5s ease-in-out;
+}
+
+.historic:hover img {
+  filter: brightness(1);
+}
+
+#navlink1:has(> .active) .active {
+  border-bottom: 3px solid #a38a00;
+}
+
+#navlink2:has(> .active) .active {
+  color: #a38a00;
+}
+
+.historic img {
+  clip-path: polygon(
+    17% 0,
+    80% 0%,
+    100% 0,
+    100% 100%,
+    83% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+}
+
+#pfp {
+  clip-path: polygon(
+    0 0,
+    80% 0%,
+    100% 0,
+    100% 34%,
+    83% 100%,
+    0 100%,
+    0% 80%,
+    0% 20%
+  );
+}
+
+#text {
+  text-decoration: none;
+  color: #a38a00;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #14213d,
+    #14213d 50%,
+    #a38a00 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: 1.5s ease-in-out;
+  cursor: context-menu;
+}
+
+#text:hover {
+  transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
+  background-position: 0%;
+  transition: 2s ease-in-out;
+}
+
+#link {
+  transition: 0.5s ease-in-out;
+}
+
+#link:hover {
+  color: #14213d;
+  transition: 0.4s ease-in-out;
+}
+
+.animate__animated.animate__slideInLeft {
+  --animate-duration: 2s;
+}
+
+.collapse {
+  visibility: visible;
 }
