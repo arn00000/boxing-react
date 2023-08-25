@@ -3,10 +3,154 @@ import WBO from "../images/wbomini.webp";
 import WBA from "../images/wbamini.webp";
 import WBC from "../images/wbcmini.webp";
 import RING from "../images/ringmini.webp";
+
+const fighters = {
+  HEAVYWEIGHT: {
+    WBA: "OLEKSANDR USYK",
+    WBC: "TYSON FURY",
+    IBF: "OLEKSANDR USYK",
+    WBO: "OLEKSANDR USYK",
+    "THE RING": "OLEKSANDR USYK",
+  },
+  BRIDGERWEIGHT: {
+    WBC: "OSCAR RIVAS",
+  },
+  CRUISERWEIGHT: {
+    WBA: "ARSEN GOULAMIRIAN",
+    WBC: "ILUNGA MAKABU",
+    IBF: "JAI OPETAIA",
+    WBO: "LAWRENCE OKOLIE",
+    "THE RING": "JAI OPETAIA",
+  },
+  "LIGHT HEAVYWEIGHT": {
+    WBA: "DIMTRY BIVOL",
+    WBC: "ARTUR BETERBIEV",
+    IBF: "ARTUR BETERBIEV",
+    WBO: "ARTUR BETERBIEV",
+    "THE RING": "VACANT",
+  },
+  "SUPER MIDDLEWEIGHT": {
+    WBA: "CANELO ALVARES",
+    WBC: "CANELO ALVAREZ",
+    IBF: "CANELO ALVARES",
+    WBO: "CANELO ALVARES",
+    "THE RING": "CANELO ALVARES",
+  },
+  MIDDLEWEIGHT: {
+    WBA: "GENNADY GOLOVKIN",
+    WBC: "JERMELL CHARLO",
+    IBF: "GENNADY GOLOVKIN",
+    WBO: "JANIBEK ALIMKHANULY",
+    "THE RING": "VACANT",
+  },
+  "SUPER WELTERWEIGHT": {
+    WBA: "JERMELL CHARLO",
+    WBC: "JERMELL CHARLO",
+    IBF: "JERMELL CHARLO",
+    WBO: "JERMELL CHARLO",
+    "THE RING": "JERMELL CHARLO",
+  },
+  WELTERWEIGHT: {
+    WBA: "ERROL SPENCE JR",
+    WBC: "TYSON FURY",
+    IBF: "ERROL SPENCE JR",
+    WBO: "TERENCE CRAWFORD",
+    "THE RING": "VACANT",
+  },
+  "SUPER LIGHTWEIGHT": {
+    WBA: "ALBERTO PUELLO",
+    WBC: "VACANT",
+    IBF: "VACANT",
+    WBO: "JOSH TAYLOR",
+    "THE RING": "JOSH TAYLOR",
+  },
+  LIGHTWEIGHT: {
+    WBA: "DEVIN HANEY",
+    WBC: "DEVIN HANEY",
+    IBF: "DEVIN HANEY",
+    WBO: "DEVIN HANEY",
+    "THE RING": "DEVIN HANEY",
+  },
+  "SUPER FEATHERWEIGHT": {
+    WBA: "HECTOR LUIS GARCIA",
+    WBC: "VACANT",
+    IBF: "SHAVKATDZHON RAKHIMOV",
+    WBO: "VACANT",
+    "THE RING": "VACANT",
+  },
+  FEATHERWEIGHT: {
+    WBA: "LEO SANTA CRUZ",
+    WBC: "REY VARGAS",
+    IBF: "JOSH WARRINGTON",
+    WBO: "EMANUEL NAVARRRETE",
+    "THE RING": "VACANT",
+  },
+  "SUPER BANTAMWEIGHT": {
+    WBA: "MURODJON AKHMADALIEV",
+    WBC: "STEPHEN FULTON JR",
+    IBF: "MURODJON AKHMADALIEV",
+    WBO: "STEPHEN FULTON JR",
+    "THE RING": "VACANT",
+  },
+  BANTAMWEIGHT: {
+    WBA: "NAOYA INOUE",
+    WBC: "NAOYA INOUE",
+    IBF: "NAOYA INOUE",
+    WBO: "PAUL BUTLER",
+    "THE RING": "NAOYA INOUE",
+  },
+  "SUPER FLYWEIGHT": {
+    WBA: "JOSHUA FRANCO",
+    WBC: "VACANT",
+    IBF: "FERNANDO MARTINEZ",
+    WBO: "KAZUTO IOKA",
+    "THE RING": "JUAN FRANCISCO ESTRADA",
+  },
+  FLYWEIGHT: {
+    WBA: "ARTEM DALAKIAN",
+    WBC: "JULIO CESAR MARTINEZ",
+    IBF: "SUNNY EDWARDS",
+    WBO: "VACANT",
+    "THE RING": "VACANT",
+  },
+  "LIGHT FLYWEIGHT": {
+    WBA: "KENSHIRO TERAJI",
+    WBC: "KENSHIRO TERAJI",
+    IBF: "SIVENATHI NONTSHINGA",
+    WBO: "JONATHAN GONZALEZ",
+    "THE RING": "KENSHIRO TERAJI",
+  },
+};
+
+console.log(fighters);
 export const Division = () => {
   return (
     <>
       <div className="pt-4 sm:p-10">
+        {Object.entries(fighters).map(([weightDivision, fighter]) => (
+          <div
+            key={weightDivision}
+            className="shadow-[0px_0px_20px_2px_rgba(20,33,61,0.4)] mb-4"
+          >
+            <div className="accordion-button w-full bg-darkblue text-gold text-sm md:text-xl py-4 px-5">
+              <h1>{weightDivision}</h1>
+            </div>
+            {Object.entries(fighter).map(([organization, championName]) => (
+              <div
+                key={organization}
+                className="py-4 px-5 space-y-2 text-gold font-bold uppercase text-xs md:text-lg"
+              >
+                <div className="flex items-center space-x-2">
+                  <img src={getImage(organization)} alt="" className="w-10" />
+                  <h1 className="w-24">+ {organization}:</h1>
+                  <h2>{championName}</h2>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      {/* <div className="pt-4 sm:p-10">
         <div
           class="accordion shadow-[0px_0px_20px_2px_rgba(20,33,61,0.4)] rounded-2xl"
           id="accordionExample"
@@ -1096,7 +1240,18 @@ export const Division = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
+function getImage(organization) {
+  const organizationImageMap = {
+    "THE RING": RING,
+    WBO,
+    IBF,
+    WBC,
+    WBA,
+  };
+
+  return organizationImageMap[organization];
+}

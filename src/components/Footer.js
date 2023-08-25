@@ -3,7 +3,7 @@ export const Footer = () => {
     <>
       <div
         id="footer"
-        className="bg-darkblue w-full h-48 md:h-32 mt-10 grid grid-cols-1 md:grid-cols-2"
+        className="bg-darkblue w-full h-[10%] md:h-32 grid grid-cols-1 md:grid-cols-2"
       >
         <div className="order-last md:order-first text-white grid content-end p-2">
           <h1>© Copyright 2022 Orthodox Rights Reserved.</h1>

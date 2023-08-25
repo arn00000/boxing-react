@@ -14,7 +14,7 @@ import russia from "../images/russia.png";
 import mexico from "../images/mexico.png";
 import ukraine from "../images/ukraine.png";
 
-export const PFP = () => {
+export const Pfp = () => {
   return (
     <>
       <div className="grid place-items-center grid-cols-1 md:grid-cols-2 p-2 lg:p-10 gap-5 pt-10">
