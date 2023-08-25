@@ -1,29 +1,29 @@
 import { NavLink } from "react-router-dom";
 
-const hideNav = (navbar) => {
-  const hide = () => {
-    let lastScrollTop = 0;
-    const currentScrollTop = navbar.scrollTop;
+// const hideNav = (navbar) => {
+//   const hide = () => {
+//     let lastScrollTop = 0;
+//     const currentScrollTop = navbar.scrollTop;
 
-    // scroll down
-    if (currentScrollTop > lastScrollTop) {
-      navbar.classList.add("hidden");
-    } else {
-      // scroll up
-      navbar.classList.remove("hidden");
-    }
-    lastScrollTop = currentScrollTop;
-  };
+//     // scroll down
+//     if (currentScrollTop > lastScrollTop) {
+//       navbar.classList.add("hidden");
+//     } else {
+//       // scroll up
+//       navbar.classList.remove("hidden");
+//     }
+//     lastScrollTop = currentScrollTop;
+//   };
 
-  window.addEventListener("scroll", hide);
-};
+//   window.addEventListener("scroll", hide);
+// };
 
 export const Navbar = () => {
   return (
     <>
       <div
         className="lg:flex w-full h-[10%] bg-white z-50 hidden "
-        ref={hideNav()}
+        // ref={hideNav()}
       >
         <div
           id="navbar-shape"
