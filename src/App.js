@@ -1,7 +1,7 @@
 import { Navbar } from "./components/Navbar";
 import { Navbar2 } from "./components/Navbar2";
 import { Home } from "./components/Home";
-import { Pfp } from "./components/Pfp";
+import { P4p } from "./components/P4p";
 import { Division } from "./components/Division";
 import { TitleBelt } from "./components/TitleBelt";
 import { Footer } from "./components/Footer";
@@ -18,7 +18,7 @@ function App() {
           <Navbar2 setShow={setShow} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/pfp" element={<Pfp />} />
+            <Route path="/pfp" element={<P4p />} />
             <Route path="/division" element={<Division />} />
             <Route path="/titlebelt" element={<TitleBelt />} />
           </Routes>
